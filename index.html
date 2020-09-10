@@ -29,22 +29,27 @@
             <div class="container-superheores"></div>        
         </section>
 
-        <section id="hero-detail">
+        <section id="herodetail">
             <div class="container-hero-detail"></div>
         </section>
 
         <section id="search">
-            <h1>This is search</h1>
-            <form autoComplete="off">
-                <input type="search" name="search" className="input-search" />
-                <button className="btn-search" aria-label="search a hero">
+            <form autocomplete="off">
+                <input type="search" name="search" class="input-search">
+                <button class="btn-search" aria-label="search a hero">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
+            <div class="search-results"></div>
         </section>
-        
+
         <section id="favorite">
-            <h1>This is favorite</h1>
+            <div class="container-favorite">
+                <h2>Favorite Heroes</h2>
+                <div class="favorite-list">
+                    <ul></ul>                 
+                </div>                
+            </div>
         </section>
     </main>
 
@@ -54,7 +59,8 @@
            by marinafaenze
         </p>
     </footer>
-
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./js/index.js"></script>    
 </body>
