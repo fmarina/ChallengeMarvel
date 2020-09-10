@@ -41,7 +41,6 @@ $(document).ready(() => {
         loadSuperHeroes(marvelData, containerSuperhero);
         searchForHero(marvelData);
     })
-    .catch(err => console.log(err));
 
 });
 
@@ -50,7 +49,6 @@ $(document).ready(() => {
 function loadSuperHeroes(data, container) {
     container.show();
     data.forEach(hero => {
-        console.log("hero from load", hero.length)
         container.append(
             $('<div>').addClass('box-hero').append(
                 $('<div>').addClass('img-hero').attr('id', hero.id).click(showHeroDetail).append(
@@ -67,7 +65,11 @@ function loadSuperHeroes(data, container) {
                     $('<p>').addClass('name-hero').text(hero.name)
                 ),
 
-                $('<i>').addClass('far fa-heart').click(function() {
+                $('<i>').addClass(
+                    (favoriteHeroes.some(fav => fav.id === hero.id))
+                    ? 'fas fa-heart'
+                    : 'far fa-heart'
+                ).click(function() {
                     
                     $(this).toggleClass('fas fa-heart').toggleClass('far fa-heart');
                     const className = $(this).attr('class');
