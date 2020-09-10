@@ -9,8 +9,7 @@ let favoriteHeroes = [];
 const getSuperHeroes = () => {
     return fetch(apiURL)
         .then(res => res.json())
-        .then(data => marvelData = data.data.results)
-        .catch(err => console.log(err));
+        .then(data => marvelData = data.data.results);
 }
 
 const containerSuperhero = $('.container-superheores');
@@ -30,7 +29,7 @@ $(document).ready(() => {
         let link = $(this).attr('href')
 
         if(link === "#home") {
-            getSuperHeroes().then(() => containerSuperhero.show());
+            containerSuperhero.show();
             $('.search-results').empty();
         }
        $(link).show();
